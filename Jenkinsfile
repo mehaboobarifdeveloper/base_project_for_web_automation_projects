@@ -10,19 +10,19 @@ pipeline {
                 bat 'gradlew.bat clean build -x test'
             }
         }
-        stage('test-firefox') {
+        stage('test-safari') {
             steps {
                 withCredentials([string(credentialsId: 'password-github', variable: 'password')]) {
                     bat "gradlew.bat test -Dgithub-user=${params.USER} -Dpassword=${password} -Dcontext=firefox -Dwebdriver.driver=firefox"
                 }
             }
         }
-        stage('aggregate') {
+        stage('aggregate-safari') {
             steps {
                 bat 'gradlew.bat aggregate'
             }
         }
-        stage('publish report'){
+        stage('publish report-safari'){
             steps {
                 publishHTML([
                     allowMissing: false,

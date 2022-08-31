@@ -46,7 +46,7 @@ public class CreateRepositoryInGitHubStepDefinition {
         }
     }
 
-    @Given("^Cesar wants to start versioning$")
+    @Given("^And Me and Cesar wants to start versioning$")
     public void startVersioning() {
         theActorCalled(CESAR).wasAbleTo(
                 Start.authenticating(theUser(GITHUB_USER)
@@ -66,7 +66,7 @@ public class CreateRepositoryInGitHubStepDefinition {
         );
     }
 
-    @Then("^Cesar should see the repository created$")
+    @Then("^And Her Cesar should see the repository created$")
     public void shouldSeeTheRepositorioCreated() {
         theActorInTheSpotlight().should(seeThat(TheRepository.name(), is(REPOSITORY_NAME)));
         theActorInTheSpotlight().should(seeThat(TheCurrent.url(), is(BASE_URL_OF_REPOSITORY_CREATED)));
