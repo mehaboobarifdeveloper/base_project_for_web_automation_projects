@@ -1,3 +1,4 @@
+# This is great
 pipeline {
     agent any
     triggers { cron('H */4 * * 1-5') }
